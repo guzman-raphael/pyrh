@@ -1455,7 +1455,7 @@ class Robinhood(InstrumentManager, SessionManager):
         """
         if isinstance(order_id, str):
             try:
-                order = self.get(urls.build_orders() + order_id)
+                order = self.get(urls.build_orders(order_id))
             except (requests.exceptions.HTTPError) as err_msg:
                 raise ValueError(
                     "Failed to get Order for ID: "
